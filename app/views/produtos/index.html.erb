@@ -1,0 +1,10 @@
+<div class='uk-container uk-container-center uk-margin-top'>
+	<h1 class='uk-margin-top'>Produtos</h1>
+	<p>Find me in app/views/produtos/index.html.erb</p>
+
+	<br/><br/>
+
+	<%= link_to new_produto_path(), class: "uk-button uk-button-primary" do %><i class='uk-icon-lightbulb-o'></i>&nbsp;NOVO PRODUTO<% end %>
+	<br/><br/>
+	<%= paginate @produtos %>
+</div>

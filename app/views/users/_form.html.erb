@@ -1,0 +1,41 @@
+<% if @user.errors.count > 0 %>
+<div class='uk-alert uk-alert-danger'>
+<% @user.errors.full_messages.each do |msg| %>
+    <%= msg %></br>
+<% end %>
+
+</div>
+<% end %>
+<br/>
+
+
+<%= form_for @user, html: {class: "uk-form uk-form-stacked"} do |f| %>
+
+	<label class='uk-form-label'>Nome: </label>
+	<%= f.text_field :name %>
+	<br/><br/>
+
+	<label class='uk-form-label'>Email: </label>
+	<%= f.text_field :email %>
+	<br/><br/>
+
+	<label class='uk-form-label'>Card: </label>
+	<%= collection_select(:user, :card_id, Card.all, :id, :card)%>
+	<br/><br/>
+
+	<% if not @user.id %>
+		<label class='uk-form-label'>Senha: </label>
+		<%= f.password_field :password %>
+		<br/><br/>
+
+		<label class='uk-form-label'>Senha: </label>
+		<%= f.password_field :password_confirmation %>
+		<br/><br/>
+	<% end %>
+
+	<br/>
+	<button class='uk-button uk-button-primary'><i class='uk-icon-check'></i>&nbsp;SALVAR</button>
+<% end %>
+
+<br/>
+<br/>

@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cod: MyString
+  categoria_id: 
+  modelo_id: 
+  tensao: MyString
+  protencia: 1
+  cor: MyString
+  bocal: MyString
+  lumens: 1
+  qtd_caixa: 1
+  descricao: MyString
+  preco_unitario: 9.99
+  preco_caixa: 9.99
+  preco_master: 9.99
+  parent_id: 1
+
+two:
+  cod: MyString
+  categoria_id: 
+  modelo_id: 
+  tensao: MyString
+  protencia: 1
+  cor: MyString
+  bocal: MyString
+  lumens: 1
+  qtd_caixa: 1
+  descricao: MyString
+  preco_unitario: 9.99
+  preco_caixa: 9.99
+  preco_master: 9.99
+  parent_id: 1

@@ -1,0 +1,79 @@
+<% if @produto.errors.count > 0 %>
+<div class='uk-alert uk-alert-danger'>
+<% @produto.errors.full_messages.each do |msg| %>
+    <%= msg %></br>
+<% end %>
+
+</div>
+<% end %>
+<br/>
+
+
+<%= form_for @produto, html: {class: "uk-form uk-form-stacked"} do |f| %>
+<div class="uk-grid">
+	<div class="uk-width-1-2 uk-text-right">
+	<label class='uk-form-label'>COD: </label>
+	<%= f.text_field :cod %>
+	<br/><br/>
+
+	<label class='uk-form-label'>CATEGORIA: </label>
+	<%= collection_select(:produto, :categoria_id, Categoria.all, :id, :categoria)%>
+	<br/><br/>
+
+	<label class='uk-form-label'>MODELO: </label>
+	<%= collection_select(:produto, :modelo_id, Modelo.all, :id, :modelo)%>
+	<br/><br/>
+
+	<label class='uk-form-label'>TENSÂO: </label>
+	<%= f.text_field :tensao %>
+	<br/><br/>
+
+	<label class='uk-form-label'>POTÊNCIA: </label>
+	<%= f.text_field :potencia %>
+	<br/><br/>
+
+	<label class='uk-form-label'>COR: </label>
+	<%= f.text_field :cor %>
+	<br/><br/>
+
+	<label class='uk-form-label'>LUMENS: </label>
+	<%= f.text_field :lumens %>
+	<br/><br/>
+
+	</div>
+	<div class="uk-width-1-2 uk-text-left">
+
+	<label class='uk-form-label'>BOCAL: </label>
+	<%= f.text_field :bocal %>
+	<br/><br/>
+
+	<label class='uk-form-label'>QTD CAIXA: </label>
+	<%= f.text_field :qtd_caixa %>
+	<br/><br/>
+
+	<label class='uk-form-label'>PREÇO UNITÁRIO: </label>
+	<%= f.text_field :preco_unitario %>
+	<br/><br/>
+
+	<label class='uk-form-label'>PREÇO CAIXA: </label>
+	<%= f.text_field :preco_caixa %>
+	<br/><br/>
+
+	<label class='uk-form-label'>PREÇO MASTER: </label>
+	<%= f.text_field :preco_master %>
+	<br/><br/>
+
+	<label class='uk-form-label'>PRODUTO PAI: </label>
+	<%= f.text_field :parent_id %>
+	<br/><br/>
+	<label class='uk-form-label'>&nbsp;</label>
+	<% if not @produto.id %>
+		<button class='uk-button uk-button-primary'><i class='uk-icon-check'></i>&nbsp;REGISTRAR</button>
+	<% else %>
+		<button class='uk-button uk-button-primary'><i class='uk-icon-check'></i>&nbsp;ALTERAR</button>
+	<% end %>
+	</div>
+<% end %>
+</div>
+<br/>
+<br/>

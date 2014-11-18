@@ -1,0 +1,34 @@
+pt:
+  hello: "Hello world"
+  views:
+      pagination:
+        previous: "anterior"
+        next: "próxima"
+        first: "primeira"
+        last: "última"
+
+  activerecord:
+    attributes:
+      produto:
+        cod: "Código(COD)"
+      user:
+        name: "Nome"
+        email: "Email"
+        password: "Senha"
+        password_confirmation: "Senhas"
+    errors:
+      models:
+        produto:
+          attributes:
+            cod:
+              blank: "é requerido"
+        user:
+          attributes:
+            name:
+              blank: "é requerido"
+            email:
+              blank: "é requerido"
+            password: 
+              blank: "é requerida"
+      messages:
+        confirmation: "não conferem"

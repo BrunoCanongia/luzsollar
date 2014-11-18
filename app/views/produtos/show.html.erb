@@ -1,0 +1,23 @@
+<div class="uk-container uk-container-center uk-margin-top">
+	<h1 class='uk-margin-top'><%= @produto.categoria.categoria %> - <%=@produto.modelo.modelo %></h1>
+
+	<h4>FOTOS</H4>
+
+	<% if notice %>
+		<div class="uk-alert"><%= notice %></div>
+	<% end %>
+	
+	<% @fotos.each do |f| %>
+		<%= image_tag f.avatar.url(:thumb) %>
+	<% end %>
+
+	<br/><br/>
+
+	<%= form_for @foto, :url => fotos_path, :html => { :multipart => true } do |f| %>
+	  <%= f.hidden_field :produto_id, {:value => @produto.id} %>
+	  <%= f.file_field :avatar %>
+
+	 <br/><br/>
+	 <%= f.submit "Click",  :class => "uk-button uk-button-primary"%>
+	<% end %>
+</div>

@@ -1,0 +1,73 @@
+<nav class="uk-navbar  my-navbar-on" data-uk-sticky>
+    <div class='uk-container uk-container-center'>
+        <a href="/" class="uk-navbar-brand uk-hidden-small  my-navbar-on"><%= image_tag('logo_branca.png') %></a>
+        <ul class="uk-navbar-nav uk-hidden-small">
+            <li><a href="">Home</a></li>
+            <li data-uk-dropdown="">
+                <a href="#">ADMIN</a>
+                <div class="uk-dropdown uk-dropdown-navbar">
+                    <ul class="uk-navbar-nav uk-hidden-small tirar-escada">
+                        <li><%= link_to "USUÁRIOS", users_path() %></li>
+	                	<li><%= link_to "PRODUTOS", produtos_path() %></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="uk-parent"><a href="">Contato</a></li>
+        </ul>
+
+        <div class="uk-navbar-flip uk-hidden-small">
+            <ul class="uk-navbar-nav">
+                <li data-uk-dropdown="">
+                    <a href="#">Logado</a>
+                    <div class="uk-dropdown uk-dropdown-navbar">
+                        <ul class="uk-navbar-nav uk-hidden-small tirar-escada">
+                            <li><%= link_to "PERFIL", user_path(current_user) %></li>
+                            <li class="uk-width-1-1"><a href="/logout">LOGOUT</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small my-navbar-on" data-uk-offcanvas></a>
+        <div class="uk-navbar-brand uk-navbar-center uk-visible-small my-navbar-on">
+            <%= image_tag('logo_branca.png') %>
+        </div>
+    </div>
+    
+</nav>
+
+<div id="offcanvas" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar" >
+        <ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav>
+        	<li class="uk-active">
+                <a href="layouts_frontpage.html"><i class='uk-icon-home'></i>&nbsp;&nbsp;&nbsp;Home</a>
+            </li>
+
+        	<li class="uk-parent">
+                <a href="#"><i class='uk-icon-lightbulb-o'></i>&nbsp;&nbsp;&nbsp;Produtos</a>
+                
+                	<ul class="uk-nav-sub">
+	                	<li><a href="">Super LED</a></li>
+	                	<li><a href="">LED</a></li>
+	                	<li><a href="">Fita LED</a></li>
+	                	<li><a href="">Eletrônicas</a></li>
+	                	<li><a href="">Fluorescentes</a></li>
+	                	<li><a href="">Halógenas</a></li>
+	                	<li><a href="">Vapor</a></li>
+	                	<li><a href="">Refletores</a></li>
+	                	<li><a href="">Luminárias</a></li>
+
+	                </ul>
+            </li>
+
+            <li>
+                <a href="layouts_frontpage.html"><i class='uk-icon-envelope-o'></i>&nbsp;&nbsp;&nbsp;Contato</a>
+            </li>
+            
+            <li class="">&nbsp;</li>
+            <li>
+                <a href="layouts_frontpage.html"><i class='uk-icon-group'></i>&nbsp;&nbsp;&nbsp;Login</a>
+            </li>
+        </ul>
+    </div>
+</div>
