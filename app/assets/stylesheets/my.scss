@@ -19,7 +19,7 @@ $banner-small: 'banner3-small.jpg';
 $navbar-color: $cor1;
 $navbar-size: 70px;
 
-$text-color: #222;
+$text-color: #666;
 
 
 html, body {
@@ -29,6 +29,12 @@ html, body {
 
 p, h1, h2, h3, h4 {
 	color: $text-color;
+}
+
+.shadow {
+	-webkit-box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    0px 1px 2px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         0px 1px 2px 0px rgba(50, 50, 50, 0.75);
 }
 
 .uk-navbar, .uk-navbar-toggle, .uk-navbar-brand {
@@ -44,6 +50,10 @@ p, h1, h2, h3, h4 {
 
 .uk-dropdown-navbar {
 	background-color:rgba(255,255,255,0.8);
+}
+
+.uk-navbar-brand {
+	box-shadow: none;
 }
 
 .uk-navbar-brand > img {
@@ -68,7 +78,7 @@ p, h1, h2, h3, h4 {
 
 .uk-navbar-nav > li > a:hover {
 	background: none;
-	color: #222;
+	color: $text-color;
 	border-radius: 25px;
 	
 }
@@ -80,7 +90,7 @@ p, h1, h2, h3, h4 {
 
 
 .uk-dropdown > .uk-navbar-nav > li > a {
-	color: #222;
+	color: $text-color;
 	width: 100%;
 	height: 35px;
 	line-height: 35px;
@@ -122,7 +132,7 @@ p, h1, h2, h3, h4 {
 }
 
 #topbanner{
-	#background-image: image-url($banner);
+	background-image: image-url($banner);
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 400px;
@@ -156,6 +166,22 @@ p, h1, h2, h3, h4 {
 	background-color: #E4EBE8;
 }
 
+
+.card-desc, .card-desc h3  { 
+	height: 40px;
+	line-height: 40px;
+	font-family: 'PT Sans Caption', sans-serif;
+	color: $cor4;
+}
+.card-campos {
+	border-top: 2px solid lightgrey;
+	height: 25px;
+	line-height: 25px;
+	font-family: 'PT Sans Caption', sans-serif;
+	color: grey;
+}
+
+
 @media (min-width: 1220px) {
  
   .uk-container {
@@ -166,8 +192,8 @@ p, h1, h2, h3, h4 {
 
 @media screen and (max-width: 479px) {
 	 #topbanner{
-		background-image: image-url($banner-small);
-		height: 275px;
+		#background-image: image-url($banner-small);
+		height: 350px;
 	}
 
 	#topbanner h1 {
@@ -183,18 +209,18 @@ p, h1, h2, h3, h4 {
 
 @media screen and (min-width: 480px) {
 	 #topbanner{
-		background-image: image-url($banner-medium);
+		#background-image: image-url($banner-medium);
 	}
 }
 @media screen and (min-width: 768px) {
 	 #topbanner{
-		background-image: image-url($banner-large);
+		#background-image: image-url($banner-large);
 	}
 }
 
 @media screen and (min-width: 960px) {
 	 #topbanner{
-		background-image: image-url($banner);
+		#background-image: image-url($banner);
 	}
 }
 
