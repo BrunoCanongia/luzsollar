@@ -171,14 +171,21 @@ p, h1, h2, h3, h4 {
 	height: 40px;
 	line-height: 40px;
 	font-family: 'PT Sans Caption', sans-serif;
-	color: $cor4;
 }
 .card-campos {
-	border-top: 2px solid lightgrey;
+	border-top: 1px solid lightgrey;
 	height: 25px;
 	line-height: 25px;
 	font-family: 'PT Sans Caption', sans-serif;
 	color: grey;
+}
+
+.uk-nav-side > li.uk-active > a {
+	background-color: rgba(243, 74, 74, 1);
+}
+
+.uk-nav-side {
+	text-transform: uppercase;
 }
 
 

@@ -1,5 +1,31 @@
 <div class="uk-container uk-container-center uk-margin-top">
 	<h1 class='uk-margin-top'><%= @produto.categoria.categoria %> - <%=@produto.modelo.modelo %></h1>
+	<div class='uk-grid'>
+		<div class='uk-width-1-1'>
+			<% if @fotos.count >= 1 %>
+			<%= image_tag @fotos.first.avatar.url(:medium) %>
+			<% end %>
+		</div>
+		<div class='uk-width-1-1'>
+		
+			<table class="uk-table uk-table-striped uk-table-hover">
+				<tr>
+					<th>COD</th>
+					<th>TENSÃO</th>
+					<th>POTÊNCIA</th>
+					<th>COR</th>
+				</tr>
+				<tr>
+					<td><%= @produto.cod%></td>
+					<td><%= @produto.tensao%></td>
+					<td><%= @produto.potencia%></td>
+					<td><%= @produto.cor%></td>
+				</tr>
+				
+
+			</table>
+		</div>
+	</div>
 
 	<h4>FOTOS</H4>
 

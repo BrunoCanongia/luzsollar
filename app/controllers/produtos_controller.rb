@@ -1,7 +1,30 @@
 class ProdutosController < ApplicationController
   def index
-    @produtos = Produto.order(:id).page params[:page]
+    #@produtos = Produto.order(:id).page params[:page]
+    @produtos = Produto.where("categoria_id = ?", params[:categoria_id]).page params[:page]
+    @categoria_atual = params[:categoria_id]
+    @categorias = Categoria.all
+    @titulo = Categoria.find(params[:categoria_id]).categoria
+
+    @links = {
+      1 => '/super_led',
+      2 => '/luminarias',
+      3 => '/refletores',
+      4 => '/eletronicas'
+    }
+
+    cor_destaque = {
+      1 => '#43AFA4',
+      2 => '#39B485',
+      3 => '#A6163A',
+      4 => '#F05F1E'
+    }
+
+    @cor_destaque = cor_destaque[@categoria_atual]
+
   end
+
+
 
   def new
     @produto = Produto.new

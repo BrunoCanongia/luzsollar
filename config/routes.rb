@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
 
   get 'foto/new'
-
   get 'foto/create'
-
   get 'foto/show'
 
   get  '/login' => 'sessions#new'
@@ -17,6 +15,11 @@ Rails.application.routes.draw do
   resources :produtos
   resources :fotos
 
+  get 'produtos/cat/:categoria_id' => 'produtos#index' # temp, somente dev
+  get '/super_led' => 'produtos#index', :categoria_id => 1
+  get '/luminarias' => 'produtos#index', :categoria_id => 2
+  get '/refletores' => 'produtos#index', :categoria_id => 3
+  get '/eletronicas' => 'produtos#index', :categoria_id => 4
 
 
 
