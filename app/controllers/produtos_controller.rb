@@ -8,16 +8,14 @@ class ProdutosController < ApplicationController
 
     @links = {
       1 => '/super_led',
-      2 => '/luminarias',
-      3 => '/refletores',
-      4 => '/eletronicas'
+      2 => '/led',
+      3 => '/eletronicas',
     }
 
     cor_destaque = {
       1 => '#43AFA4',
-      2 => '#39B485',
-      3 => '#A6163A',
-      4 => '#F05F1E'
+      2 => '#B41156',
+      3 => '#F05F1E'
     }
 
     @cor_destaque = cor_destaque[@categoria_atual]
