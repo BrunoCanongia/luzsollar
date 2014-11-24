@@ -1,7 +1,8 @@
 class Produto < ActiveRecord::Base
   belongs_to :categoria
   belongs_to :modelo
-  belongs_to :produto, :foreign_key => "parent_id"
+  has_many :filhos, :class_name => "Produto", :foreign_key => "parent_id"
+  belongs_to :pai, :class_name => "Produto", :foreign_key => "parent_id"
   has_many :fotos
 
   paginates_per 6

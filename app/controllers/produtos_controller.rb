@@ -1,7 +1,7 @@
 class ProdutosController < ApplicationController
   def index
     #@produtos = Produto.order(:id).page params[:page]
-    @produtos = Produto.where("categoria_id = ?", params[:categoria_id]).page params[:page]
+    @produtos = Produto.where("categoria_id = ?", params[:categoria_id]).where(parent_id: nil).page params[:page]
     @categoria_atual = params[:categoria_id]
     @categorias = Categoria.all
     @titulo = Categoria.find(params[:categoria_id]).categoria

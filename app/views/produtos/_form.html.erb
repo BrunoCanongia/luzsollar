@@ -36,10 +36,6 @@
 	<%= f.text_field :cor %>
 	<br/><br/>
 
-	<label class='uk-form-label'>LUMENS: </label>
-	<%= f.text_field :lumens %>
-	<br/><br/>
-
 	</div>
 	<div class="uk-width-1-2 uk-text-left">
 
@@ -63,9 +59,10 @@
 	<%= f.text_field :preco_master %>
 	<br/><br/>
 
-	<label class='uk-form-label'>PRODUTO PAI: </label>
-	<%= f.text_field :parent_id %>
-	<br/><br/>
+	<label class='uk-form-label'>LUMENS: </label>
+	<%= f.text_field :lumens %>
+	<br/>
+
 	<label class='uk-form-label'>&nbsp;</label>
 	<% if not @produto.id %>
 		<button class='uk-button uk-button-primary'><i class='uk-icon-check'></i>&nbsp;REGISTRAR</button>
