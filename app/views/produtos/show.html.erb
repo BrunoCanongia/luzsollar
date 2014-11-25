@@ -26,6 +26,15 @@
 					<td><%= @produto.potencia%></td>
 					<td><%= @produto.cor%></td>
 				</tr>
+
+				<% @produto.filhos.each do |fi| %>
+				<tr>
+					<td><%= fi.cod %></td>
+					<td><%= fi.tensao %></td>
+					<td><%= fi.potencia %></td>
+					<td><%= fi.cor %></td>
+				</tr>
+				<% end %>
 				
 
 			</table>
@@ -39,12 +48,47 @@
 	<% end %>
 
 	<br/><br/>
+	<% if current_user %>
 
-	<%= form_for @foto, :url => fotos_path, :html => { :multipart => true } do |f| %>
-	  <%= f.hidden_field :produto_id, {:value => @produto.id} %>
-	  <%= f.file_field :avatar %>
+		<h2>Administração</h2>
+		<hr/>
 
-	 <br/><br/>
-	 <%= f.submit "Click",  :class => "uk-button uk-button-primary"%>
+		<%= form_for @foto, :url => fotos_path, :html => { :multipart => true } do |f| %>
+		  <%= f.hidden_field :produto_id, {:value => @produto.id} %>
+		  <%= f.file_field :avatar %>
+
+		 <br/><br/>
+		 <%= f.submit "Click",  :class => "uk-button uk-button-primary"%>
+		<% end %>
+
+
+		<!-- produto pai -->
+
+		<br/><br/>
+		
+		<% if @produto.filhos.count == 0 %>
+			<h2>Produto Pai</h2>
+			<% if @produto.pai == nil %>
+				<!-- form para pai -->
+				<%= form_for @produto, html: {class: "uk-form uk-form-stacked"} do |f| %>
+					<%= collection_select(:produto, :parent_id, Produto.where("categoria_id = ?", @produto.categoria.id).where("modelo_id = ?", @produto.modelo.id), :id, :cod)%>
+					<button class='uk-button uk-button-primary'><i class='uk-icon-check'></i>&nbsp;ASSOCIAR</button>
+				<% end %>
+
+			<% else %>
+				<!-- exibe o pai e link para desfazer -->
+				<%= link_to @produto.pai.cod, produto_path(@produto.pai) %>
+				<%= form_for @produto, html: {class: "uk-form uk-form-stacked"} do |f| %>
+					<%= f.hidden_field :parent_id, {:value => nil} %>
+					<button class='uk-button uk-button-primary'><i class='uk-icon-check'></i>&nbsp;DESFAZER</button>
+				<% end %>
+
+			<% end %>
+
+		<% end %>
+		<br/>
+		<br/>
+
 	<% end %>
+
 </div>

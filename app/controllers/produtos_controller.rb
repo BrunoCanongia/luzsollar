@@ -45,9 +45,17 @@ class ProdutosController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
+    @produto = Produto.find(params[:id])
+
+    if @produto.update_attributes(produto_params)
+      redirect_to @produto, :notice => 'Cadastro alterado!'
+    else
+      render :edit
+    end
   end
 
   private
