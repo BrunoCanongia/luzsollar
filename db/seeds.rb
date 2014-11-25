@@ -30,7 +30,8 @@ cards_list = [
 ]
 
 users_list = [
-	["Bruno Canongia", "bruno@janjadev.com", "$2a$10$1S.gisW9hTvI4nSHYpbQGeTJErRYnb7Xj8dCF0xJBBTszZ4rGK.zG", 1]
+	["Bruno Canongia", "bruno@janjadev.com", "$2a$10$1S.gisW9hTvI4nSHYpbQGeTJErRYnb7Xj8dCF0xJBBTszZ4rGK.zG", 1],
+	["Roberto", "rc2@janjadev.com", "$2a$10$.2k8IELS9.0.0axqBqEz.OWjNOj8lJiHLW3.P1g10WS/TWE02DmYu", 1]
 ]
 
 puts '###### POPULANDO DB ######'
