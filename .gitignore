@@ -15,4 +15,5 @@
 /log/*.log
 /tmp
 
-/public/system/fotos
+/public/system/fotos/**
+/public/assets/**
