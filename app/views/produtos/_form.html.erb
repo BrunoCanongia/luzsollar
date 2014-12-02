@@ -17,11 +17,13 @@
 	<br/><br/>
 
 	<label class='uk-form-label'>CATEGORIA: </label>
-	<%= collection_select(:produto, :categoria_id, Categoria.all, :id, :categoria)%>
+	<%= f.select :categoria_id, options_for_select(@categorias.collect { |categoria|
+    [categoria.categoria.titleize, categoria.id] }, @categoria.id), {}, { id: 'categorias_select' } %>
 	<br/><br/>
 
 	<label class='uk-form-label'>MODELO: </label>
-	<%= collection_select(:produto, :modelo_id, Modelo.all, :id, :modelo)%>
+	<%= f.select :modelo_id, options_for_select(@modelos.collect { |modelo|
+    [modelo.modelo.titleize, modelo.id] }, @modelo.id), {}, { id: 'modelos_select' } %>
 	<br/><br/>
 
 	<label class='uk-form-label'>TENSÂO: </label>

@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   resources :produtos
   resources :fotos
 
+  get '/ajax_m' => 'produtos#ajax_modelos'
+
   get 'produtos/cat/:categoria_id' => 'produtos#index' # temp, somente dev
   get '/super_led' => 'produtos#index', :categoria_id => 1
   get '/led' => 'produtos#index', :categoria_id => 2

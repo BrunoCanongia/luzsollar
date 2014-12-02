@@ -23,13 +23,32 @@ class ProdutosController < ApplicationController
   end
 
 
+  def ajax_modelos
+    @modelos = Categoria.find(params[:categoria_id]).modelos
+    respond_to do |format|
+      format.js
+    end
+  end
 
   def new
     @produto = Produto.new
+    @categorias = Categoria.all
+    @modelos = Categoria.first.modelos
+
+    if !@categoria
+      @categoria = Categoria.first
+      @modelo = @categoria.modelos.first
+    end
+
   end
 
   def create
     @produto = Produto.new(produto_params)
+    @categorias = Categoria.all
+    @modelos = Categoria.find(params[:produto][:categoria_id]).modelos
+
+    @categoria = Categoria.find(params[:produto][:categoria_id])
+    @modelo = Modelo.find(params[:produto][:modelo_id])
 
     if @produto.save
       redirect_to @produto, :notice => 'Cadastro criado com sucesso!'
