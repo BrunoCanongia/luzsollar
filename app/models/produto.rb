@@ -5,7 +5,7 @@ class Produto < ActiveRecord::Base
   belongs_to :pai, :class_name => "Produto", :foreign_key => "parent_id"
   has_many :fotos
 
-  paginates_per 6
+  paginates_per 9
 
   validates :cod, :categoria, :modelo, presence: true
 end
