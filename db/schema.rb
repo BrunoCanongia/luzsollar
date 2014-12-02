@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118032207) do
+ActiveRecord::Schema.define(version: 20141202021113) do
 
   create_table "cards", force: true do |t|
     t.string   "card"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 20141118032207) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "catmods", force: true do |t|
+    t.integer  "categoria_id"
+    t.integer  "modelo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "catmods", ["categoria_id"], name: "index_catmods_on_categoria_id", using: :btree
+  add_index "catmods", ["modelo_id"], name: "index_catmods_on_modelo_id", using: :btree
 
   create_table "fotos", force: true do |t|
     t.datetime "created_at"

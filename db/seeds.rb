@@ -23,6 +23,14 @@ modelos_list = [
 	"8U"
 ]
 
+catmod_list = [
+	[1, 1],
+	[1, 2],
+	[2, 3],
+	[2, 4],
+	[2, 1]
+]
+
 cards_list = [
 	"JanjaDev",
 	"Admin",
@@ -43,6 +51,11 @@ end
 modelos_list.each do |modelo|
 	puts "modelo: %s" % modelo
 	Modelo.create(modelo: modelo)
+end
+
+puts '# associando categorias e modelos'
+catmod_list.each do |cat, mod|
+	Catmod.create(categoria_id: cat, modelo_id: mod)
 end
 
 cards_list.each do |card|
