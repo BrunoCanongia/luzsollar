@@ -21,6 +21,10 @@ Rails.application.routes.draw do
   get '/super_led' => 'produtos#index', :categoria_id => 1
   get '/led' => 'produtos#index', :categoria_id => 2
   get '/eletronicas' => 'produtos#index', :categoria_id => 3
+  get '/halogenas' => 'produtos#index', :categoria_id => 4
+  get '/vapor' => 'produtos#index', :categoria_id => 5
+  get '/luminarias' => 'produtos#index', :categoria_id => 6
+  get '/refletores' => 'produtos#index', :categoria_id => 7
 
 
 

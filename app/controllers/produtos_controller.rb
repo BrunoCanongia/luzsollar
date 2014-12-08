@@ -10,6 +10,10 @@ class ProdutosController < ApplicationController
       1 => '/super_led',
       2 => '/led',
       3 => '/eletronicas',
+      4 => '/halogenas',
+      5 => '/vapor',
+      6 => '/luminarias',
+      7 => '/refletores'
     }
 
 
