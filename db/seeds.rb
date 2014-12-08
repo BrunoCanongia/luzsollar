@@ -9,10 +9,13 @@
 
 
 categorias_list = [
-  "Super LED",
-  "LED",
-  "Eletrônicas",
-  "Luminárias"
+  ["Super LED", "#3FABA0"],
+  ["LED", "#EFA217"],
+  ["Eletrônicas", "#E95025"],
+  ["Halógenas", "#A5194C"],
+  ["Vapor", "#3464B2"],
+  ["Refletores" , "#A81A4E"],
+  ["Luminárias", "#39B485"]
 ]
 
 modelos_list = [
@@ -42,9 +45,9 @@ users_list = [
 ]
 
 puts '###### POPULANDO DB ######'
-categorias_list.each do |categoria|
+categorias_list.each do |categoria, color|
 	puts "categoria: %s" % categoria
-	Categoria.create(categoria: categoria)
+	Categoria.create(categoria: categoria, color: color)
 end
 
 modelos_list.each do |modelo|

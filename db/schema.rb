@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141202021113) do
+ActiveRecord::Schema.define(version: 20141208193853) do
 
   create_table "cards", force: true do |t|
     t.string   "card"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20141202021113) do
     t.string   "categoria"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "color"
   end
 
   create_table "catmods", force: true do |t|

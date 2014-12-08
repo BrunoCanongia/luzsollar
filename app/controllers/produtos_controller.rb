@@ -12,13 +12,8 @@ class ProdutosController < ApplicationController
       3 => '/eletronicas',
     }
 
-    cor_destaque = {
-      1 => '#43AFA4',
-      2 => '#B41156',
-      3 => '#F05F1E'
-    }
 
-    @cor_destaque = cor_destaque[@categoria_atual]
+    @cor_destaque = Categoria.find(params[:categoria_id]).color
 
   end
 
