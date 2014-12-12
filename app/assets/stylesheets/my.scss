@@ -56,7 +56,7 @@ p, h1, h2, h3, h4 {
 	box-shadow: none;
 }
 
-.uk-navbar-brand > a > img {
+.uk-navbar-brand > a > img, .uk-navbar-brand > img {
 	height: $navbar-size - 20px;
 	margin: 0 10px;
 	width: auto;

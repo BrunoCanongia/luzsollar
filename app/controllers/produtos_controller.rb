@@ -63,6 +63,11 @@ class ProdutosController < ApplicationController
   end
 
   def edit
+    @produto = Produto.find(params[:id])
+    @categorias = Categoria.all
+    @categoria = @produto.categoria
+    @modelos = @categoria.modelos
+    @modelo = @produto.modelo
 
   end
 
@@ -72,6 +77,10 @@ class ProdutosController < ApplicationController
     if @produto.update_attributes(produto_params)
       redirect_to @produto, :notice => 'Cadastro alterado!'
     else
+      @categorias = Categoria.all
+      @categoria = @produto.categoria
+      @modelos = @categoria.modelos
+      @modelo = @produto.modelo
       render :edit
     end
   end
