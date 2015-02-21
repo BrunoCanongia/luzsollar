@@ -1,6 +1,6 @@
 <ul class="uk-nav uk-nav-side">
 	<% @categorias.each do |cat| %>
 
-    	<li class="<% if cat.id == @categoria_atual %>uk-active<% end %>"><a style="<% if cat.id == @categoria_atual %>background-color: <%= @cor_destaque %><% end %>" href="<%= @links[cat.id]%>"><%= cat.categoria %></a></li>
+    	<li class="<% if cat.id == @categoria_atual %>uk-active<% else %> hover-<%=cat.id%><% end %>"><a style="<% if cat.id == @categoria_atual %>background-color: <%= @cor_destaque %><% end %>" href="<%= @links[cat.id]%>"><%= cat.categoria %></a></li>
     <% end %>
 </ul>
