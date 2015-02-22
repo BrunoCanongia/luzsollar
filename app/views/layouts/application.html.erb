@@ -12,13 +12,17 @@
 </head>
 <body>
 
-<% if current_user %>
-    <%= render 'layouts/navbar_on' %>
-<% else %>
-    <%= render 'layouts/navbar_off' %>
-<% end %>
+<div class='page-wrap'>
 
-<%= yield %>
+	<% if current_user %>
+	    <%= render 'layouts/navbar_on' %>
+	<% else %>
+	    <%= render 'layouts/navbar_off' %>
+	<% end %>
+
+	<%= yield %>
+
+</div>
 
 <%= render 'layouts/footer' %>
 </body>
