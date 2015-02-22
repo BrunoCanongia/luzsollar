@@ -15,6 +15,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require uikit
-//= require jquery.stellar.min
 //= require_tree .
 

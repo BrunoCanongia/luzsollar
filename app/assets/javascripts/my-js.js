@@ -1,6 +1,5 @@
 function initialize() {
-	$.stellar( 'destroy' );
-	$.stellar();
+	//js here
 }
 
 $(document).ready(initialize);

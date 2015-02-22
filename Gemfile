@@ -15,7 +15,6 @@ gem 'execjs'
 gem 'libv8'
 gem 'therubyracer',  platforms: :ruby
 gem 'uikit-sass-rails'
-gem 'stellar-js-rails'
 gem 'rails-footnotes', '~> 4.0'
 gem 'paperclip', '~> 4.2'
 gem 'kaminari'
