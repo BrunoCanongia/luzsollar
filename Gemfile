@@ -14,11 +14,11 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'execjs'
 gem 'libv8'
 gem 'therubyracer',  platforms: :ruby
-gem 'uikit-sass-rails'
 gem 'rails-footnotes', '~> 4.0'
 gem 'paperclip', '~> 4.2'
 gem 'kaminari'
 gem 'jquery-turbolinks'
+gem 'font-awesome-sass', '~> 4.3.0'
 # /Janja
 
 gem 'jquery-rails'

@@ -15,5 +15,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require uikit
+//require_tree ../../../vendor/assets/javascripts/core
+//= require components/slideshow
+//= require components/slideshow-fx
 //= require_tree .
 

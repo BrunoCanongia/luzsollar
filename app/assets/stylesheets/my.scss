@@ -14,7 +14,7 @@ $cor-navside: #FDB823; // nav bar on
 
 $bg3: 'banner3.jpg';
 
-$banner: $bg3;
+$banner: 'banner-novo.jpg';
 $banner-large: 'banner3-large.jpg';
 $banner-medium: 'banner3-medium.jpg';
 $banner-small: 'banner3-small.jpg';
@@ -22,7 +22,7 @@ $banner-small: 'banner3-small.jpg';
 $navbar-color: $cor1;
 $navbar-size: 70px;
 
-$footer-size: 200px;
+$footer-size: 130px;
 
 $text-color: #666;
 
@@ -166,18 +166,6 @@ a.uk-navbar-brand.uk-hidden-small { padding: 0 30px 0 0;}
   #padding: 0 50px;
 }
 
-#topbanner{
-	background-image: image-url($banner);
-	background-size: cover;
-	background-repeat: no-repeat;
-	height: 400px;
-	position: relative;
-	color: #fff;
-	font-size: 24px;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.698);
-	#text-align: center;
-
-}
 
 
 #catalogo {
@@ -235,13 +223,15 @@ a.uk-navbar-brand.uk-hidden-small { padding: 0 30px 0 0;}
 }
 
 
+#banner img {
+	width: 100%;
+	height: auto;
+}
+
 
 .uk-alert-danger {
 	border: 1px solid #D85030;
 }
-
-
-
 
 
 .field_with_errors { display: inline; }
