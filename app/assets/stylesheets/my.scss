@@ -94,6 +94,14 @@ p, h1, h2, h3, h4 {
 	background: none;
 	
 }
+
+.uk-navbar-nav > li:hover > a,
+.uk-navbar-nav > li > a:focus,
+.uk-navbar-nav > li.uk-open > a {
+  background-color: $navbar-color;
+}
+
+
 .black > li > a {
 	color: black;
 }
