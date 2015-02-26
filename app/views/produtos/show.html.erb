@@ -7,11 +7,20 @@
 	<% end %>
 	
 	<div class='uk-grid'>
-		<div class='uk-width-1-1'>
+		<div class='uk-width-1-4'>
 			<% if @fotos.count >= 1 %>
 			<%= image_tag @fotos.first.avatar.url(:medium) %>
 			<% end %>
 		</div>
+		<div class='uk-width-3-4'>
+			<ul style="display: table; list-style-type:none; background-color: grey;">
+			<% @fotos.each do |f| %>
+				<li><%= image_tag f.avatar.url(:thumb) %></li>
+			<% end %>
+			</ul>
+		</div>
+	</div>
+	<div class='uk-grid'>
 		<div class='uk-width-1-1'>
 		
 			<table class="uk-table uk-table-striped">

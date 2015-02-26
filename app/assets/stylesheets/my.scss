@@ -20,6 +20,7 @@ $banner-medium: 'banner3-medium.jpg';
 $banner-small: 'banner3-small.jpg';
 
 $navbar-color: $cor1;
+$navbar-color-on: $cor-navside;
 $navbar-size: 70px;
 
 $footer-size: 130px;
@@ -113,6 +114,12 @@ h1 {
 .uk-navbar-nav > li > a:focus,
 .uk-navbar-nav > li.uk-open > a {
   background-color: $navbar-color;
+}
+
+.my-navbar-on .uk-navbar-nav > li:hover > a,
+.my-navbar-on .uk-navbar-nav > li > a:focus,
+.my-navbar-on .uk-navbar-nav > li.uk-open > a {
+  background-color: $navbar-color-on;
 }
 
 
