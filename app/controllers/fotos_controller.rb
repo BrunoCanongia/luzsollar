@@ -5,7 +5,16 @@ class FotosController < ApplicationController
 
   def create
     @produto = Produto.find(params[:foto][:produto_id])
-    if (@produto.fotos.count >= 3)
+
+    cnt = @produto.fotos.count
+    if cnt == 0
+      params[:foto][:principal] = true
+    else
+      params[:foto][:principal] = false
+    end
+
+    # máximo de 3 fotos por produto
+    if cnt >= 3
       redirect_to @produto, :notice => 'Máximo de 3 fotos por produto'
     else
       if @foto = Foto.create(foto_params)
