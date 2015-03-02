@@ -11,7 +11,12 @@
 					<div class='uk-width-1-1'>
 						<%= link_to p do %>
 							<% if p.fotos.count >= 1 %>
-								<%= image_tag p.fotos.first.avatar.url(:medium) %>
+								<% p.fotos.each do |f| %>
+									<% if f.principal %>
+										<%= image_tag f.avatar.url(:medium) %>
+									<% end %>
+								<% end %>
+								
 							<% else %>
 								<%= image_tag 'prod-default.png' %>
 							<% end %>

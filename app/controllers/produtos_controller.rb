@@ -21,6 +21,22 @@ class ProdutosController < ApplicationController
 
   end
 
+  def foto_principal
+    foto = Foto.find(params[:id])
+    produto = foto.produto
+    produto.fotos.each do |f|
+      if f.id == foto.id
+        f.principal = true
+      else
+        f.principal = false
+      end
+      f.save
+    end
+    
+    redirect_to produto, :notice => 'Foto principal alterada'
+
+  end
+
 
   def ajax_modelos
     @modelos = Categoria.find(params[:categoria_id]).modelos

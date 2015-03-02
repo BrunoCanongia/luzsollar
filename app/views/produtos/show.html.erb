@@ -10,7 +10,11 @@
 		<div class='uk-width-1-1'>
 			<div class="" style="height: 256px; float: left;">
 				<% if @fotos.count >= 1 %>
-				<%= image_tag @fotos.first.avatar.url(:medium), :class => "produto-img-destaque" %>
+					<% @fotos.each do |f| %>
+						<% if f.principal %>
+							<%= image_tag f.avatar.url(:medium), :class => "produto-img-destaque" %>
+						<% end %>
+					<% end %>
 				<% end %>
 			</div>
 			
@@ -54,17 +58,29 @@
 		</div>
 	</div>
 
-	<h4>FOTOS</H4>
-	
-	<% @fotos.each do |f| %>
-		<%= image_tag f.avatar.url(:thumb) %>
-	<% end %>
-
 	<br/><br/>
 	<% if current_user %>
 
 		<h2>Administração</h2>
 		<hr/>
+
+		<h4>FOTOS</H4>
+	
+		<div class="uk-clearfix">
+		<% @fotos.each do |f| %>
+			<div style="width: 100px; float:left; margin: 0 20px;" class="uk-text-center">
+				<%= image_tag f.avatar.url(:thumb) %>
+				<% if f.principal %>
+				principal
+				<% else %>
+				<%= link_to "tornar principal", :action => "foto_principal", :id => f.id %>
+
+				<% end %>
+			</div>
+		<% end %>
+		</div>
+		<br/><br/><br/>
+
 
 		<%= form_for @foto, :url => fotos_path, :html => { :multipart => true } do |f| %>
 		  <%= f.hidden_field :produto_id, {:value => @produto.id} %>

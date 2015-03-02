@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'foto/create'
   get 'foto/show'
 
+
   get  '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get  '/logout' => 'sessions#destroy'
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
   resources :fotos
 
   get '/ajax_m' => 'produtos#ajax_modelos'
+
+  get 'foto_principal/:id' => 'produtos#foto_principal'
 
   get 'produtos/cat/:categoria_id' => 'produtos#index' # temp, somente dev
   get '/super_led' => 'produtos#index', :categoria_id => 1

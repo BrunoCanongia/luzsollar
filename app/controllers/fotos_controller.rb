@@ -7,6 +7,8 @@ class FotosController < ApplicationController
     @produto = Produto.find(params[:foto][:produto_id])
 
     cnt = @produto.fotos.count
+
+    # caso não tenha foto, se torna a principal
     if cnt == 0
       params[:foto][:principal] = true
     else
