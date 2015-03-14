@@ -9,13 +9,15 @@
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
+# DEBIAN socket
+# socket: /var/run/mysqld/mysqld.sock
 default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
   username: root
   password: bcf
-  socket: /var/run/mysqld/mysqld.sock
+  socket: /var/run/mysql/mysql.sock
 
 development:
   <<: *default
