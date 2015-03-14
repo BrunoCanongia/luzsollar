@@ -20,7 +20,6 @@ Rails.application.routes.draw do
 
   get 'foto_principal/:id' => 'produtos#foto_principal'
 
-  get 'produtos/cat/:categoria_id' => 'produtos#index' # temp, somente dev
   get '/super_led' => 'produtos#index', :categoria_id => 1
   get '/led' => 'produtos#index', :categoria_id => 2
   get '/eletronicas' => 'produtos#index', :categoria_id => 3
