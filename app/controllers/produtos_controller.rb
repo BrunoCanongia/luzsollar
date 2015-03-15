@@ -37,6 +37,11 @@ class ProdutosController < ApplicationController
 
   end
 
+  def confirmar_deletar_foto
+    @foto = Foto.find(params[:id])
+    @produto = @foto.produto
+  end
+
 
   def ajax_modelos
     @modelos = Categoria.find(params[:categoria_id]).modelos

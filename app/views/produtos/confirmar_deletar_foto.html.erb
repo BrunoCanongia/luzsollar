@@ -1,0 +1,7 @@
+<div class="spacer"></div>
+<div class="uk-container uk-container-center uk-margin-top">
+	<h1>Deletar foto</h1>
+	<%= image_tag @foto.avatar.url(:thumb) %>
+	<p>Deseja realmente deletar a foto? Clique <%= link_to "aqui", :controller => "fotos", :action => "deletar", :id => @foto.id %></p>
+	<p><%= link_to "Voltar", @produto %> para produto: <%= @produto.cod %></p>
+</div>

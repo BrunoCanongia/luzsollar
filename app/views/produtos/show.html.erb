@@ -76,6 +76,8 @@
 				<%= link_to "tornar principal", :action => "foto_principal", :id => f.id %>
 
 				<% end %>
+				<br/>
+				<%= link_to "deletar", :action => "confirmar_deletar_foto", :id => f.id %>
 			</div>
 		<% end %>
 		</div>

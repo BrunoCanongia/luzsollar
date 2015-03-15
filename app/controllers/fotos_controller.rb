@@ -31,6 +31,16 @@ class FotosController < ApplicationController
   	@foto = Foto.find(params[:id])
   end
 
+  def deletar
+    foto = Foto.find(params[:id])
+    produto = foto.produto
+
+    # apaga a foto
+    foto.destroy
+
+    redirect_to produto, :notice => 'Foto removida com sucesso'
+  end
+
   private
 
   def foto_params

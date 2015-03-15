@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get '/ajax_m' => 'produtos#ajax_modelos'
 
   get 'foto_principal/:id' => 'produtos#foto_principal'
+  get 'confirmar_deletar_foto/:id' => 'produtos#confirmar_deletar_foto'
+  get 'deletar_foto/:id' => 'fotos#deletar'
 
   get '/super_led' => 'produtos#index', :categoria_id => 1
   get '/led' => 'produtos#index', :categoria_id => 2
