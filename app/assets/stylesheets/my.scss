@@ -23,7 +23,7 @@ $navbar-color: $cor1;
 $navbar-color-on: $cor-navside;
 $navbar-size: 70px;
 
-$footer-size: 130px;
+$footer-size: 150px;
 
 $text-color: #666;
 
@@ -278,9 +278,18 @@ a.uk-navbar-brand.uk-hidden-small { padding: 0 30px 0 0;}
 }
 
 
-.produto-img-destaque { height: 256px; width: 256px;}
+.produto-img-destaque { 
+	height: auto;
+	width: 100%;
+	margin-bottom: 40px;
+}
 
-
+.thumbs {
+	height: 200px; 
+	float: left; 
+	line-height: 200px;
+	margin-top: 50px;
+}
 
 
 
@@ -293,36 +302,59 @@ a.uk-navbar-brand.uk-hidden-small { padding: 0 30px 0 0;}
 }
 
 @media screen and (max-width: 479px) {
-	 #topbanner{
-		#background-image: image-url($banner-small);
-		height: 350px;
-	}
+	.banner1-sm, .banner1-lg, .banner1-md { display: none;}
+	.banner1-xs { display: inline;}
 
-	#topbanner h1 {
-		margin-top: 60px;
-		font-size: 36px;
-	}
+	.banner2-sm, .banner2-lg, .banner2-md { display: none;}
+	.banner2-xs { display: inline;}
 
-	#topbanner p {
-		margin-top: 25px;
-		font-size: 18px;
-	}
+	.banner3-sm, .banner3-lg, .banner3-md { display: none;}
+	.banner3-xs { display: inline;}
 }
 
-@media screen and (min-width: 480px) {
-	 #topbanner{
-		#background-image: image-url($banner-medium);
-	}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+	.banner1-xs, .banner1-lg, .banner1-md { display: none;}
+	.banner1-sm { display: inline;}
+
+	.banner2-xs, .banner2-lg, .banner2-md { display: none;}
+	.banner2-sm { display: inline;}
+
+	.banner3-xs, .banner3-lg, .banner3-md { display: none;}
+	.banner3-sm { display: inline;}
 }
-@media screen and (min-width: 768px) {
-	 #topbanner{
-		#background-image: image-url($banner-large);
-	}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+	.banner1-xs, .banner1-sm, .banner1-lg { display: none;}
+	.banner1-md { display: inline;}
+
+	.banner2-xs, .banner2-sm, .banner2-lg { display: none;}
+	.banner2-md { display: inline;}
+
+	.banner3-xs, .banner3-sm, .banner3-lg { display: none;}
+	.banner3-md { display: inline;}
 }
 
 @media screen and (min-width: 960px) {
-	 #topbanner{
-		#background-image: image-url($banner);
-	}
+	.banner1-xs, .banner1-sm, .banner1-md { display: none;}
+	.banner1-lg { display: inline;}
+
+	.banner2-xs, .banner2-sm, .banner2-md { display: none;}
+	.banner2-lg { display: inline;}
+
+	.banner3-xs, .banner3-sm, .banner3-md { display: none;}
+	.banner3-lg { display: inline;}
 }
 
+
+@media screen and (min-width: 768px) {
+	.thumbs {
+		height: 250px; 
+		float: left; 
+		line-height: 320px;
+	}
+
+	.produto-img-destaque { 
+		height: 256px;
+		width: 100%;
+		margin-bottom: 40px;
+	}
+}

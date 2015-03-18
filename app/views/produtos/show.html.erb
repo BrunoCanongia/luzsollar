@@ -7,7 +7,7 @@
 	<% end %>
 	
 	<div class='uk-grid'>
-		<div class='uk-width-1-1'>
+		<div class='uk-width-1-1 '>
 			<div class="" style="height: 256px; float: left;">
 				<% if @fotos.count >= 1 %>
 					<% @fotos.each do |f| %>
@@ -19,7 +19,7 @@
 			</div>
 			
 		
-			<div style="height: 256px; float: left; line-height: 350px;">
+			<div class='thumbs'>
 				<% @fotos.each do |f| %>
 					<%= image_tag f.avatar.url(:thumb) %>
 				<% end %>
